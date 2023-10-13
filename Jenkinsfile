@@ -8,7 +8,7 @@ pipeline{
     stage('Build') {
       steps {
 	sh 'rm -rf *.var'
-        sh 'jar -cvf StudentSurvey.war -C "/StudentSurvey/src/main/webapp" .'     
+        sh 'jar -cvf StudentSurvey.war -C "StudentSurvey/src/main/webapp" .'     
         sh 'docker build -t harenak/studentsurveyform:latest -f "/Dockerfile" .'
       }
     }
